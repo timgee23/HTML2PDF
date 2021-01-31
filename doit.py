@@ -16,6 +16,11 @@ def doit(directory,list_to_process):
     try:
         for url in list_to_process:
             url=url.strip()
+            if not url:
+                continue
+            if url[0]=="#":
+                print("---------\n%s\n---------\n"%url)
+                continue
             print("-----------------\nNow processing %s" % url)
             print("Number %d of %d" % (numnext,numtodo))
             code = requests.get(url)
